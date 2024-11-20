@@ -1,4 +1,4 @@
-# Text Processing and Data Management Tool
+# Text Processing Tool
 
 ## Overview
     This tool allows users to perform various operations 

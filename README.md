@@ -14,3 +14,6 @@
 
 ## Requirements
 * Java 21 or higher.
+
+## JavaFX UI
+![image](https://github.com/user-attachments/assets/67929b8f-18ce-4eda-be9e-aa105866c3a6)

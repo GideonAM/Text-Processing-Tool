@@ -60,6 +60,25 @@ public class HelloController {
     }
 
     @FXML
+    public void otherRegexPatterns() {
+        try {
+            if (text_data_input.getText().isEmpty() || regex_patterns.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Text data and regex pattern are required");
+                alert.showAndWait();
+            }
+
+            String output = textProcessing.otherRegexPatterns(text_data_input.getText(), regex_patterns.getText());
+            output_area.setText(output);
+        } catch (Exception exception) {
+            output_area.setText("Something went wrong");
+        }
+
+    }
+
+    @FXML
     public void replaceText() {
         if (text_data_input.getText().isEmpty() || replacement_text.getText().isEmpty() || regex_patterns.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);

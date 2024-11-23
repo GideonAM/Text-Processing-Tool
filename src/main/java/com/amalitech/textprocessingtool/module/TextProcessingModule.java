@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class TextProcessingModule {
 
-    public String displayMatches(String inputText, String regexPattern) {
+    public String searchRegexPattern(String inputText, String regexPattern) {
         Pattern pattern = Pattern.compile(regexPattern);
         Matcher matcher = pattern.matcher(inputText);
 
@@ -14,6 +14,12 @@ public class TextProcessingModule {
         }
 
         return "No match found";
+    }
+
+    public String matchTextWithRegex(String inputText, String regexPattern) {
+        Pattern pattern = Pattern.compile(regexPattern);
+        Matcher matcher = pattern.matcher(inputText);
+        return String.format("Input text matches given regex: %s", matcher.matches());
     }
 
     public String searchAndReplace(String inputText, String regexPattern, String replacement) {

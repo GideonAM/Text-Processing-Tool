@@ -19,6 +19,9 @@ public class HelloController {
     private TextArea replacement_text;
 
     @FXML
+    TextProcessingModule textProcessing = new TextProcessingModule();
+
+    @FXML
     public void searchRegexPattern() {
         try {
             if (text_data_input.getText().isEmpty() || regex_patterns.getText().isEmpty()) {
@@ -29,8 +32,26 @@ public class HelloController {
                 alert.showAndWait();
             }
 
-            TextProcessingModule textProcessing = new TextProcessingModule();
-            String displayMatches = textProcessing.displayMatches(text_data_input.getText(), regex_patterns.getText());
+            String displaySearch = textProcessing.searchRegexPattern(text_data_input.getText(), regex_patterns.getText());
+            output_area.setText(displaySearch);
+
+        } catch (Exception exception) {
+            output_area.setText("Something went wrong");
+        }
+    }
+
+    @FXML
+    public void matchTextWithRegex() {
+        try {
+            if (text_data_input.getText().isEmpty() || regex_patterns.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Text data and regex pattern are required");
+                alert.showAndWait();
+            }
+
+            String displayMatches = textProcessing.matchTextWithRegex(text_data_input.getText(), regex_patterns.getText());
             output_area.setText(displayMatches);
 
         } catch (Exception exception) {
@@ -49,7 +70,6 @@ public class HelloController {
         }
 
         try {
-            TextProcessingModule textProcessing = new TextProcessingModule();
             String output = textProcessing.searchAndReplace(
                     text_data_input.getText(),
                     regex_patterns.getText(),

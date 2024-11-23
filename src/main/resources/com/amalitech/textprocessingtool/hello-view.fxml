@@ -38,8 +38,8 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button layoutX="266.0" layoutY="255.0" mnemonicParsing="false" onAction="#searchRegexPattern" prefHeight="42.0" prefWidth="133.0" text="Search" />
-            <Button layoutX="449.0" layoutY="255.0" mnemonicParsing="false" onAction="#replaceText" prefHeight="42.0" prefWidth="133.0" text="Replace" />
+            <Button layoutX="240.0" layoutY="255.0" mnemonicParsing="false" onAction="#searchRegexPattern" prefHeight="19.0" prefWidth="68.0" text="Search" />
+            <Button layoutX="333.0" layoutY="255.0" mnemonicParsing="false" onAction="#replaceText" prefHeight="25.0" prefWidth="68.0" text="Replace" />
             <Label layoutX="14.0" layoutY="337.0" text="Output:">
                <font>
                   <Font size="20.0" />
@@ -52,6 +52,7 @@
                </font>
             </Label>
             <TextArea fx:id="replacement_text" layoutX="230.0" layoutY="191.0" prefHeight="50.0" prefWidth="432.0" />
+            <Button layoutX="423.0" layoutY="255.0" mnemonicParsing="false" onAction="#matchTextWithRegex" prefHeight="25.0" prefWidth="109.0" text="Check for match" />
          </children>
       </AnchorPane>
    </children>
